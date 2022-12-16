@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Threading;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private LayerMask enemyLayers;
     [SerializeField] private Transform attackPoint;
+    [SerializeField] private Animator playerAnimator;
     private Rigidbody2D body;
     private BoxCollider2D box;
     private Animator anim;
@@ -35,7 +37,7 @@ public class PlayerMove : MonoBehaviour
     }
     void Update()
     {
-        //transform.rotation = new Quaternion(0, 0, 0, 0);
+        
         GetMovement();
         FlipPlayer();
         MovePlayer();
@@ -45,7 +47,6 @@ public class PlayerMove : MonoBehaviour
         {
             body.gravityScale = gravity;
         }
-        //anim.SetBool("run", walkdirection != 0);
     }
 
     private void GetMovement()
@@ -69,7 +70,7 @@ public class PlayerMove : MonoBehaviour
 
     private void MovePlayer()
     {
-        //transform.localScale = new Vector2(transform.position.x * walkspeed * walkdirection, transform.position.y);
+        playerAnimator.SetFloat("Speed", Math.Abs(walkdirection));
         body.velocity = new Vector2(walkdirection * walkspeed, body.velocity.y);
     }
 
@@ -92,6 +93,7 @@ public class PlayerMove : MonoBehaviour
         if (attack)
         {
             //Hier animation
+            playerAnimator.Play("attack-player");
 
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 

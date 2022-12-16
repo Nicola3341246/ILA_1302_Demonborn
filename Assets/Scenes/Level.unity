@@ -208,7 +208,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detected: 1
-  contact: 1
   speed: 5
   target: {fileID: 869110489}
   self: {fileID: 70158753}
@@ -1239,6 +1238,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   attackPoint: {fileID: 272164192}
+  playerAnimator: {fileID: 869110491}
 --- !u!61 &419907511
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2017,7 +2017,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detected: 1
-  contact: 1
   speed: 5
   target: {fileID: 869110489}
   self: {fileID: 827505637}
@@ -3010,7 +3009,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detected: 1
-  contact: 1
   speed: 5
   target: {fileID: 869110489}
   self: {fileID: 775026554}
@@ -3521,7 +3519,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detected: 1
-  contact: 1
   speed: 5
   target: {fileID: 869110489}
   self: {fileID: 741372257}
@@ -4015,7 +4012,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detected: 1
-  contact: 1
   speed: 5
   target: {fileID: 869110489}
   self: {fileID: 2093914233}
